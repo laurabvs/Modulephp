@@ -1,85 +1,121 @@
+<html>
+    <head>
+        
+    </head>
+       
+<body>
+
+<h1>Exercices PHP</h1>
+
+<h2>Exercice 1</h2>
+
+<p> consigne</p>
+
+<code>
+// booleens
+
+$pomme = true; 
+echo $pomme;
+</code>
+
 <?php
+// booleens
+
+    $pomme = true; 
+    echo $pomme;
+?>
 
 
-include_once 'array.php';
-require_once 'variable.php';
+<?php
+// entiers
 
+    $a = 10;
+    $b = 28;
+    $c = $a + $b;
+    echo $c;
+?>
 
+<?php
+// Chaine de caractere
 
-$var1 = 10;
-$var2 = 20;
-$var3 = 30;
-$var4 = 40;
-$var5 = 50;
-
-$talbecommand = array(1,1,1,1,1);
-
-$arraytest=array($var1, $var2, $var3, $var4, $var5);
-
-function runTable($arraytest,$talbecommand,$item){
-    $var6 =60;
-    switch ($item)
-    {
-        // case ($talbecommand[$item]==1):
-        case 0:
-            for($i=0;$i<count($arraytest);++$i){
-                   echo $arraytest[$i];
-            }
-        ?>
-        <br>
-        <?php
-        break;
-        case 1:
-            for($i=4;$i>=0;--$i){
-                    echo $arraytest[$i];
-            }
-        ?>
-        <br>
-        <?php
-            break;
-        case 2:
-            for($i=0;$i < count($arraytest);++$i){
-
-                echo $arraytest[array_rand($arraytest)];
-            }
-        ?>
-        <br>
-        <?php
-            break;
-        case 3:
-              array_push($arraytest, $var6);
-              for($i=0;$i<count($arraytest);++$i){
-                echo $arraytest[$i];
-         }
-         ?>
-         <br>
-         <?php
-        break;
-        case 4:
-              unset($arraytest[4]);
-              for($i=0;$i<count($arraytest);++$i){
-                echo $arraytest[$i];
-              }
-        ?>
-        <br>
-        <?php
-        break;
-        default:
-    }
-}
-
-function parcours($arraytest,$talbecommand){
-    /*foreach($talbecommand as $item){
-        runTable($arraytest,$talbecommand,$item);
-    }*/
-    for($i=0;$i<count($arraytest);$i=$i+1)
-    {
-        if($talbecommand[$i]==1){
-            runTable($arraytest,$talbecommand,$i);
-        }
-    }
-}
-
-parcours($arraytest,$talbecommand);
+    $machaine = "\nGoodMorning";
+    echo gettype($machaine);
 
 ?>
+
+<br>
+
+<h2>Exercice 2</h2>
+
+<?php
+// Ajout de la date 
+
+    echo "Aujourd'hui nous somme le " .date ("29/11/2021");
+
+?>
+
+<br>
+
+<h2>Exercice 3</h2>
+
+
+<?php
+// creation d'un tableau vide
+    $vide = array();
+    $vide[] = "toto";
+    print_r($vide);
+
+?>
+
+<h2>Exercice 4</h2>
+
+<?php
+// creation du tableau avec les dates de l'annee
+
+    $dates = array("Noel ","Jour de l'an ","Vacances au ski ","Mon anniversaire ","Vacance d'ete ", "Paques");
+    echo "<br>" . "Les dates de l'annee sont: <br> " . $dates[0] . "<br>" . $dates[1] . "<br>" . $dates[2] . "<br>" . $dates[3] . "<br>" . $dates[4];
+
+?>
+
+
+
+<h2>Exercice 5</h2>
+
+<?php
+// Utiliser la boucle for pour repeter un ensemble d'instructions plusieurs fois + lecture à l'endroit du tableau
+
+    for ($i = 0; $i < count($dates); $i++) 
+    {
+    echo "<br> ------------ <br>";
+    echo $dates[$i];
+    echo "<br> ------------";
+    }
+?>
+
+<h2>Exercice 6</h2>
+
+<?php
+
+// On affiche le dernier element du tableau
+
+    for ($i = count($dates) - 1; $i >= 0; $i--) 
+    {
+    echo "<br> ------------ <br>";
+    echo $dates[$i];
+    echo "<br> ------------";
+    }
+?>
+
+<br><br>
+
+<h2>Exercice 7</h2>
+
+
+<?php
+// Compter le nombre d'elements dans mon tableau dates
+
+    echo count($dates);
+
+?>
+</body>
+</html>
